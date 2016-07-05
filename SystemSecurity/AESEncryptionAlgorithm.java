@@ -64,10 +64,15 @@ public class AESEncryptionAlgorithm {
 
         //while (true) {
         try {
-            String userPassword = "jamesgosling";
+            String userPassword = "xcdfvghbvgfcgvbh";
             String decrytptedCipher = "";
             String enteredPotentialPassword = "jamesgosling";
             Boolean isAuthenticated = false;
+            
+            //create a SecureRandom Object
+            SecureRandom secureRandom = SecureRandom.getInstance(algorithmDeclaration);
+            secureRandom.nextBytes(keyValueBytes);
+            System.err.println(secureRandom.nextInt());
 
             encrypt(userPassword);
             decrytptedCipher = decrypt(userPassword);

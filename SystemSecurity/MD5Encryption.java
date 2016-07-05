@@ -28,15 +28,18 @@ public class MD5Encryption {
     
     public  static String getCiphertext(String password){
         try {
-            //Create a messageDigest instance
+            /* //Create a messageDigest instance
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
             //Add a password to digest
+            messageDigest.update(password.getBytes());*/
+            
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
             messageDigest.update(password.getBytes());
-            
-            //Get the hash bytes
             byte[] bytes = messageDigest.digest();
+            /*//Get the hash bytes
+            byte[] bytes = messageDigest.digest();*/
             
-            //this byte[] has bytes in dcimal format
+            //this byte[] has bytes in decimal format
             //Convert to hexadecimal format
             StringBuilder stringBuilder = new StringBuilder();
             for(int i=0;i<bytes.length;i++){

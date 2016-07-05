@@ -17,7 +17,7 @@ public class UsersAuthentication {
 
     
     public static void main(String[] args) {
-        System.err.println(getUserPasswords().get("smue@fgd.bnm"));
+        //System.err.println(getUserPasswords().get("smue@fgd.bnm"));
     }
     public static HashMap<String, String> getUserPasswords() {
         HashMap<String, String> userAuthenticationDetails = new HashMap<>();
@@ -29,9 +29,9 @@ public class UsersAuthentication {
             }
             return userAuthenticationDetails;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "DB Connection Error" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "An error occured, try again later... Connection Error" + e.getMessage());
             HashMap<String, String> noValueMap = new HashMap<>();
-            noValueMap.put("No Value", "DB ERROR");
+            noValueMap.put("No Value", "DataBase ERROR");
             return noValueMap;
         }
     }
